@@ -48,8 +48,7 @@ func main() {
 	}
 
 	// login 
-	fmt.Println("===LOGIN===")
-	fmt.Println("")
+	fmt.Println("===LOGIN===/n")
 
 	fmt.Print("username: ")
 	fmt.Scan(&inputusername)
@@ -59,11 +58,11 @@ func main() {
 
 	if inputusername == username && inputpassword == password {
 		fmt.Println("akses di berikan")
-		fmt.Println("selamat datang", username)
-		fmt.Println("")
-		fmt.
+		fmt.Println("selamat datang/n", username)
+		fmt.Println("==============================")
 	} else {
 		fmt.Println("akses di tolak!!")
-		fmt.Println("cek kembai username atau password ")
+		fmt.Println("cek kembai username atau password/n ")
+		fmt.Println("====================================")
 	}
 }
