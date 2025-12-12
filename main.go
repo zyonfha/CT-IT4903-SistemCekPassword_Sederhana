@@ -115,7 +115,6 @@ func main() {
 						fmt.Println("anda pelupa ya ?")
 						return 
 					}
-					// ===== END TAMBAHAN =====
 
 					break
 				} else {
@@ -134,35 +133,35 @@ func main() {
 				continue
 			}
 
-			percobaanlog := 0
-			for percobaanlog < 3 {
+			// percobaanlog := 0
+			// for percobaanlog < 3 {
 
-				fmt.Println("===LOGIN===")
-				fmt.Println("")
-				fmt.Print("username: ")
-				fmt.Scan(&inputusername)
+			// 	fmt.Println("===LOGIN===")
+			// 	fmt.Println("")
+			// 	fmt.Print("username: ")
+			// 	fmt.Scan(&inputusername)
 
-				fmt.Print("password: ")
-				fmt.Scan(&inputpassword)
+			// 	fmt.Print("password: ")
+			// 	fmt.Scan(&inputpassword)
 
-				if inputusername == username && inputpassword == password {
-					fmt.Println("akses di berikan")
-					fmt.Println("selamat datang", username)
-					fmt.Println("")
-					return
-				} else {
-					percobaanlog++
-					fmt.Println("akses di tolak!!")
-					fmt.Println("Sisa percobaan:", 3-percobaanlog)
-				}
-			}
+			// 	if inputusername == username && inputpassword == password {
+			// 		fmt.Println("akses di berikan")
+			// 		fmt.Println("selamat datang", username)
+			// 		fmt.Println("")
+			// 		return
+			// 	} else {
+			// 		percobaanlog++
+			// 		fmt.Println("akses di tolak!!")
+			// 		fmt.Println("Sisa percobaan:", 3-percobaanlog)
+			// 	}
+			// }
 
-			if percobaanlog == 3 {
-				fmt.Println("")
-				fmt.Println("Login gagal 3 kali.")
-				fmt.Println("anda pelupa ya ?")
-				return
-			}
+			// if percobaanlog == 3 {
+			// 	fmt.Println("")
+			// 	fmt.Println("Login gagal 3 kali.")
+			// 	fmt.Println("anda pelupa ya ?")
+			// 	return
+			// }
 		}
 	}
 }
