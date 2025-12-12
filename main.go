@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 
 	var username, password string
-	var inputusername, inputpassword string 
+	var inputusername, inputpassword string
 	var panjangKarakter int
 	var adaAngka, valid bool
 	var char byte
@@ -60,8 +60,8 @@ func main() {
 
 					adahurufbesar := false //besar
 					adahurufkecil := false //kecil
-					adadigit := false //digit
-					adasimbol := false // simbol
+					adadigit := false      //digit
+					adasimbol := false     // simbol
 
 					for i := 0; i < len(password); i++ {
 						c := password[i]
@@ -101,7 +101,7 @@ func main() {
 							fmt.Println("akses di berikan")
 							fmt.Println("selamat datang", username)
 							fmt.Println("")
-							return 
+							return
 						} else {
 							percobaanlog++
 							fmt.Println("akses di tolak!!")
@@ -113,14 +113,14 @@ func main() {
 						fmt.Println("")
 						fmt.Println("Login gagal 3 kali.")
 						fmt.Println("anda pelupa ya ?")
-						return 
+						return
 					}
 
 					break
 				} else {
 					percobaanreg++
-					fmt.Println("Register gagal, ",)
-					if percobaanreg == 3{
+					fmt.Println("Register gagal, ")
+					if percobaanreg == 3 {
 						fmt.Println("Register gagal 3 kali. Program dihentikan.")
 						return
 					}
@@ -131,37 +131,8 @@ func main() {
 			if username == "" {
 				fmt.Println("Belum ada akun, register dulu.")
 				continue
-			} 
+			}
 
-			// percobaanlog := 0
-			// for percobaanlog < 3 {
-
-			// 	fmt.Println("===LOGIN===")
-			// 	fmt.Println("")
-			// 	fmt.Print("username: ")
-			// 	fmt.Scan(&inputusername)
-
-			// 	fmt.Print("password: ")
-			// 	fmt.Scan(&inputpassword)
-
-			// 	if inputusername == username && inputpassword == password {
-			// 		fmt.Println("akses di berikan")
-			// 		fmt.Println("selamat datang", username)
-			// 		fmt.Println("")
-			// 		return
-			// 	} else {
-			// 		percobaanlog++
-			// 		fmt.Println("akses di tolak!!")
-			// 		fmt.Println("Sisa percobaan:", 3-percobaanlog)
-			// 	}
-			// }
-
-			// if percobaanlog == 3 {
-			// 	fmt.Println("")
-			// 	fmt.Println("Login gagal 3 kali.")
-			// 	fmt.Println("anda pelupa ya ?")
-			// 	return
-			// }
 		}
 	}
 }
