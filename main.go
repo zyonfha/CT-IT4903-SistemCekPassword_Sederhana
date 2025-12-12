@@ -20,7 +20,6 @@ func main() {
 
 		if menu == 3 {
 			fmt.Println("Keluar program.")
-			fmt.printf("\niseng doang ?")
 			return
 		}
 
@@ -88,17 +87,42 @@ func main() {
 
 					fmt.Println("Level Password:", level)
 
-					percobaanlog := 0 
-					for percobaanlog < 3 
-					fmt.Println("===LOGIN===")
-					fmt.Println("")
+					percobaanlog := 0
+					for percobaanlog < 3 {
+						fmt.Println("===LOGIN===")
+						fmt.Println("")
+						fmt.Print("username: ")
+						fmt.Scan(&inputusername)
+
+						fmt.Print("password: ")
+						fmt.Scan(&inputpassword)
+
+						if inputusername == username && inputpassword == password {
+							fmt.Println("akses di berikan")
+							fmt.Println("selamat datang", username)
+							fmt.Println("")
+							return 
+						} else {
+							percobaanlog++
+							fmt.Println("akses di tolak!!")
+							fmt.Println("Sisa percobaan:", 3-percobaanlog)
+						}
+					}
+
+					if percobaanlog == 3 {
+						fmt.Println("")
+						fmt.Println("Login gagal 3 kali.")
+						fmt.Println("anda pelupa ya ?")
+						return 
+					}
+					// ===== END TAMBAHAN =====
 
 					break
 				} else {
 					percobaanreg++
-					fmt.Println("Register gagal ",)
+					fmt.Println("Register gagal, ",)
 					if percobaanreg == 3 {
-						fmt.Println("Harap baca lagi")	
+						fmt.Println("Register gagal 3 kali. Program dihentikan.")
 						return
 					}
 				}
