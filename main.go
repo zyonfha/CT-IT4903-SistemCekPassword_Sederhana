@@ -131,7 +131,7 @@ func main() {
 			if username == "" {
 				fmt.Println("Belum ada akun, register dulu.")
 				continue
-			}
+			} 
 
 			// percobaanlog := 0
 			// for percobaanlog < 3 {
