@@ -121,7 +121,7 @@ func main() {
 				} else {
 					percobaanreg++
 					fmt.Println("Register gagal, ",)
-					if percobaanreg == 3 {
+					if percobaanreg == 3{
 						fmt.Println("Register gagal 3 kali. Program dihentikan.")
 						return
 					}
