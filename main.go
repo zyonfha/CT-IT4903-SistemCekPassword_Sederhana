@@ -9,6 +9,27 @@ func main() {
 	var panjangKarakter int
 	var adaAngka, valid bool
 	var char byte
+	var menu int
+
+	for {
+		 
+		fmt.Println("1. Register")
+		fmt.Println("2. login")
+		fmt.Println("3. keluar")
+		fmt.Print("pilih: ")
+		fmt.Scan(&menu)
+
+		if menu == 3 {
+			fmt.Printf("\nanda iseng doang?")
+			return
+		}
+
+		if menu == 1 {
+			percobaanreg := 0 
+
+			for percobaanreg
+		} 
+	}
 
 	// register dan input username
 	fmt.Println("Register")
@@ -66,6 +87,5 @@ func main() {
 		fmt.Println("akses di tolak!!")
 		fmt.Println("cek kembai username atau password ")
 		fmt.Println("")
-		fmt.Println("====================================")
 	}
 }
