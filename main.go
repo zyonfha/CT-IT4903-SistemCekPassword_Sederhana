@@ -149,7 +149,10 @@ func main() {
 
 					if inputusername == username && inputpassword == password {
 						loginsukses = true
-						fmt.Println("Login berhasil")
+						fmt.Println("akses di berikan")
+						fmt.Println("selamat datang", username)
+						fmt.Println("")
+						programawal = false
 					} else {
 						percobaanlog++
 						fmt.Println("Login gagal, sisa:", 3-percobaanlog)
