@@ -117,6 +117,7 @@ func main() {
 						fmt.Println("")
 						fmt.Println("Login gagal 3 kali.")
 						fmt.Println("anda pelupa ya ?")
+						programawal = false
 					}
 
 				} else {
@@ -160,7 +161,10 @@ func main() {
 				}
 
 				if !loginsukses {
+					fmt.Println("")
 					fmt.Println("Login gagal 3 kali.")
+					fmt.Println("anda pelupa ya ?")
+					programawal = false
 				}
 			}
 
