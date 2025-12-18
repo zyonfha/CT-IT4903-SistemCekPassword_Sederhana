@@ -130,7 +130,7 @@ func main() {
 			}
 
 			if percobaanreg == 3 {
-				fmt.Println("register gagal 3 kali. Program dihentikan.")
+				fmt.Println("register gagal 3 kali.")
 				programawal = false
 			}
 		}
@@ -138,33 +138,7 @@ func main() {
 		if menu == 2 {
 			if username == "" {
 				fmt.Println("Belum ada akun, register dulu.")
-			} else {
-
-				percobaanlog := 0
-				loginsukses := false
-
-				for percobaanlog < 3 && !loginsukses {
-
-					fmt.Print("username: ")
-					fmt.Scan(&inputusername)
-
-					fmt.Print("password: ")
-					fmt.Scan(&inputpassword)
-
-					if inputusername == username && inputpassword == password {
-						loginsukses = true
-						fmt.Println("Login berhasil")
-					} else {
-						percobaanlog++
-						fmt.Println("Login gagal, sisa:", 3-percobaanlog)
-					}
-				}
-
-				if !loginsukses {
-					fmt.Println("Login gagal 3 kali.")
-				}
 			}
-
 		}
 
 		if menu == 3 {
