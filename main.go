@@ -117,7 +117,6 @@ func main() {
 						fmt.Println("")
 						fmt.Println("Login gagal 3 kali.")
 						fmt.Println("anda pelupa ya ?")
-						programawal = false
 					}
 
 				} else {
@@ -150,10 +149,7 @@ func main() {
 
 					if inputusername == username && inputpassword == password {
 						loginsukses = true
-						fmt.Println("akses di berikan")
-						fmt.Println("selamat datang", username)
-						fmt.Println("")
-						programawal = false
+						fmt.Println("Login berhasil")
 					} else {
 						percobaanlog++
 						fmt.Println("Login gagal, sisa:", 3-percobaanlog)
@@ -161,10 +157,7 @@ func main() {
 				}
 
 				if !loginsukses {
-					fmt.Println("")
 					fmt.Println("Login gagal 3 kali.")
-					fmt.Println("anda pelupa ya ?")
-					programawal = false
 				}
 			}
 
@@ -176,4 +169,4 @@ func main() {
 
 		}
 	}
-}  
+}
