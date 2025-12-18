@@ -5,28 +5,29 @@ import "fmt"
 func main() {
 
 	var username, password string
-	var inputusername, inputpassword string 
+	var inputusername, inputpassword string
 	var panjangKarakter int
 	var adaAngka, valid bool
 	var char byte
 
 	var menu int
-	for {
+
+	programawal := true
+
+	for programawal {
+
 		fmt.Println("1. Register")
 		fmt.Println("2. Login")
 		fmt.Println("3. Keluar")
 		fmt.Print("Pilih: ")
 		fmt.Scan(&menu)
 
-		if menu == 3 {
-			fmt.Println("Keluar program.")
-			return
-		}
-
 		if menu == 1 {
 			percobaanreg := 0
+			registersukses := false
 
-			for percobaanreg < 3 {
+			for percobaanreg < 3 && !registersukses {
+				valid = true
 
 				fmt.Println("Register")
 				fmt.Print("Buat Username: ")
@@ -45,8 +46,6 @@ func main() {
 					}
 				}
 
-				valid = true
-
 				if panjangKarakter < 8 {
 					fmt.Println("Password minimal 8 karakter")
 					valid = false
@@ -56,12 +55,13 @@ func main() {
 				}
 
 				if valid {
+					registersukses = true
 					fmt.Println("Register Berhasil")
 
-					adahurufbesar := false //besar
-					adahurufkecil := false //kecil
-					adadigit := false //digit
-					adasimbol := false // simbol
+					adahurufbesar := false
+					adahurufkecil := false
+					adadigit := false
+					adasimbol := false
 
 					for i := 0; i < len(password); i++ {
 						c := password[i]
@@ -88,7 +88,9 @@ func main() {
 					fmt.Println("Level Password:", level)
 
 					percobaanlog := 0
-					for percobaanlog < 3 {
+					loginsukses := false
+					for percobaanlog < 3 && !loginsukses {
+
 						fmt.Println("===LOGIN===")
 						fmt.Println("")
 						fmt.Print("username: ")
@@ -98,10 +100,12 @@ func main() {
 						fmt.Scan(&inputpassword)
 
 						if inputusername == username && inputpassword == password {
+							loginsukses = true
 							fmt.Println("akses di berikan")
 							fmt.Println("selamat datang", username)
 							fmt.Println("")
-							return 
+							programawal = false
+
 						} else {
 							percobaanlog++
 							fmt.Println("akses di tolak!!")
@@ -109,59 +113,67 @@ func main() {
 						}
 					}
 
-					if percobaanlog == 3 {
+					if !loginsukses {
 						fmt.Println("")
 						fmt.Println("Login gagal 3 kali.")
 						fmt.Println("anda pelupa ya ?")
-						return 
+						programawal = false
 					}
 
-					break
 				} else {
 					percobaanreg++
-					fmt.Println("Register gagal, ",)
-					if percobaanreg == 3{
-						fmt.Println("Register gagal 3 kali. Program dihentikan.")
-						return
-					}
+					fmt.Println("Register gagal ")
 				}
 			}
+
+			if percobaanreg == 3 {
+				fmt.Println("register gagal 3 kali. Program dihentikan.")
+				programawal = false
+			}
 		}
+
 		if menu == 2 {
 			if username == "" {
 				fmt.Println("Belum ada akun, register dulu.")
-				continue
-			} 
+			} else {
 
-			// percobaanlog := 0
-			// for percobaanlog < 3 {
+				percobaanlog := 0
+				loginsukses := false
 
-			// 	fmt.Println("===LOGIN===")
-			// 	fmt.Println("")
-			// 	fmt.Print("username: ")
-			// 	fmt.Scan(&inputusername)
+				for percobaanlog < 3 && !loginsukses {
 
-			// 	fmt.Print("password: ")
-			// 	fmt.Scan(&inputpassword)
+					fmt.Print("username: ")
+					fmt.Scan(&inputusername)
 
-			// 	if inputusername == username && inputpassword == password {
-			// 		fmt.Println("akses di berikan")
-			// 		fmt.Println("selamat datang", username)
-			// 		fmt.Println("")
-			// 		return
-			// 	} else {
-			// 		percobaanlog++
-			// 		fmt.Println("akses di tolak!!")
-			// 		fmt.Println("Sisa percobaan:", 3-percobaanlog)
-			// 	}
-			// }
+					fmt.Print("password: ")
+					fmt.Scan(&inputpassword)
 
-			// if percobaanlog == 3 {
-			// 	fmt.Println("")
-			// 	fmt.Println("Login gagal 3 kali.")
-			// 	fmt.Println("anda pelupa ya ?")
-			// 	return
-			// }
+					if inputusername == username && inputpassword == password {
+						loginsukses = true
+						fmt.Println("akses di berikan")
+						fmt.Println("selamat datang", username)
+						fmt.Println("")
+						programawal = false
+					} else {
+						percobaanlog++
+						fmt.Println("Login gagal, sisa:", 3-percobaanlog)
+					}
+				}
+
+				if !loginsukses {
+					fmt.Println("")
+					fmt.Println("Login gagal 3 kali.")
+					fmt.Println("anda pelupa ya ?")
+					programawal = false
+				}
+			}
+
+		}
+
+		if menu == 3 {
+			fmt.Println("Keluar program.")
+			programawal = false
+
 		}
 	}
 }  
