@@ -10,7 +10,7 @@ func main() {
 	var adaAngka, valid bool
 	var char byte
 	var menu int
-	var pilih string
+	var jawab string
 
 	programawal := true
 
@@ -134,14 +134,15 @@ func main() {
 
 				fmt.Println("Register gagal 3 kali.")
 				fmt.Print("mau kembali ke menu? (y/n): ")
-				fmt.Scan(&pilih)
+				fmt.Scan(&jawab)
 
-				if pilih == "y" || pilih == "Y" {
+				if jawab == "y" || jawab == "Y" || jawab == "yes" || jawab == "Yes" {
 					programawal = true
 				} else {
 					fmt.Println("Program dihentikan.")
 					programawal = false
 				}
+
 			}
 		}
 
