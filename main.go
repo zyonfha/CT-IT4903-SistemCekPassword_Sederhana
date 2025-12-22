@@ -8,10 +8,10 @@ func main() {
 	var inputusername, inputpassword string
 	var panjangKarakter int
 	var adaAngka, valid bool
-	var char byte
+	var char, c byte
 	var menu int
 	var jawab string
-
+	
 	programawal := true
 
 	for programawal {
@@ -64,7 +64,7 @@ func main() {
 					adasimbol := false
 
 					for i := 0; i < len(password); i++ {
-						c := password[i]
+						c = password[i]
 						if c >= 'A' && c <= 'Z' {
 							adahurufbesar = true
 						} else if c >= 'a' && c <= 'z' {
@@ -79,7 +79,7 @@ func main() {
 					level := "Lemah"
 					if len(password) >= 8 && adahurufbesar && adahurufkecil && adadigit && adasimbol {
 						level = "Sangat Kuat"
-					} else if len(password) >= 8 && adadigit && (adahurufbesar || adasimbol) {
+					} else if len(password) >= 8 && adadigit && adahurufbesar && adasimbol {
 						level = "Kuat"
 					} else if len(password) >= 8 && adadigit {
 						level = "Sedang"
