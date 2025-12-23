@@ -17,7 +17,7 @@ func main() {
 	for programawal {
 		fmt.Println("=====Menu=====")
 		fmt.Println("1. Register")
-		fmt.Println("2. Login")
+		fmt.Println("2. Login")   
 		fmt.Println("3. Keluar")
 		fmt.Print("Pilih: ")
 		fmt.Scan(&menu)
@@ -79,7 +79,7 @@ func main() {
 					level := "Lemah"
 					if len(password) >= 8 && adahurufbesar && adahurufkecil && adadigit && adasimbol {
 						level = "Sangat Kuat"
-					} else if len(password) >= 8 && adadigit && adahurufbesar && adasimbol {
+					} else if len(password) >= 8 && adadigit && (adahurufbesar || adasimbol ) {
 						level = "Kuat"
 					} else if len(password) >= 8 && adadigit {
 						level = "Sedang"
